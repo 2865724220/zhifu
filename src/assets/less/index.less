@@ -1,0 +1,686 @@
+@import 'variable.less';
+@import 'common.less';
+*{ box-sizing: border-box; }
+a,img,button,input,textarea{-webkit-tap-highlight-color:rgba(255,255,255,0);}
+/* header-common */
+.wrap{
+	position: relative;
+	min-height: 100%;
+}
+.header{
+	height: 42px;
+	width:100%;
+	background: @mainBlue;
+	text-align:center;
+	position: relative;
+	.icon-back{
+		position: absolute;
+		width:12px;
+		height:19px;
+		background:url(../images/icon_back.png) no-repeat center center;
+		background-size:cover;
+		top:12px;
+		left:16px;
+	}
+	.icon-close{
+		display: block;
+		position: absolute;
+		width:20px;
+		height:20px;
+		background: url(../images/head_close.png) no-repeat center center;
+		background-size:cover;
+		top:11px;
+		right:12px;
+	}
+	span{
+		font-size: 16px;
+		color:#fff;
+		line-height: 42px;
+		display: block;
+	}
+}
+/*detail*/
+.borrow-detail{
+	padding-bottom: 44/@baseRem;
+	.title{
+		height: 94/@baseRem;
+		background-color: #f5f5f5;
+		font-size: 32/@baseRem;
+	  	color: #333333;
+	  	line-height: 94/@baseRem;
+	    padding-left: 32/@baseRem;
+	}
+	.info-block li {
+		padding: 34/@baseRem 32/@baseRem;
+		background-color: #ffffff;
+		border-bottom: 1px solid #d8d8d8;
+		line-height: 36/@baseRem;
+	}
+	.info-title, .info-txt{
+		font-size: 28/@baseRem;
+		color: #333333;
+	}
+	.info-title{
+		float: left;
+	}
+	.info-txt{
+		float: right;
+
+		span{
+			color: #999999;
+		}
+
+		a{
+			color: #50abff;
+		}
+	}
+
+	.progress-block {
+		background-color: #ffffff;
+		padding: 30/@baseRem 26/@baseRem;
+
+		li{
+			display: block;
+			width: 100%;
+			padding-bottom: 20px;
+			position: relative;
+			&:after{
+				position: absolute;
+				display: block;
+				content: '';
+				width:1px;
+				height:24px;
+				bottom:-4px;
+				left:8px;
+				background: #cbcbcb;
+			}
+			&.line-active{
+				&:after{
+					background:#50abff; 
+				}
+			}
+			&.active{
+			.progress-icon{
+				background: url(../images/progress_blue.png) no-repeat center center;
+				background-size:cover;
+			}
+			.progress-info{
+					color:#363636;
+					&:after{
+						background: #50abff;
+					}
+				}
+
+			}
+
+		&:last-child{
+			padding-bottom: 0;
+			&:after{
+				display: none;
+			}
+			.progress-info{
+				&:after{
+					display: none;
+				}
+			}
+		}
+
+		}
+
+	}
+
+	.progress-info{
+		color: #b5b5b5;
+		padding:0 40/@baseRem 0 50/@baseRem;
+		position:relative;
+		&:after{
+			position: absolute;
+			display: block;
+			content: '';
+			width:1px;
+			height:calc(~'100% - 20px');
+			background:#cbcbcb;
+			left:8px;
+			top:20px;
+		}
+	    .p-title{
+	    	font-size: 30/@baseRem;
+		  	display: inline-block;
+		  	height: 22px;
+		    line-height: 22px;
+		    overflow: hidden;
+	    }
+	    .p-time{
+	    	font-size: 22/@baseRem;
+	    	display: inline-block;
+  			vertical-align: bottom;
+  			height: 22px;
+		    line-height: 22px;
+		    overflow: hidden;
+	    }
+	    .subtext{
+	    	font-size: 24/@baseRem;
+	    	line-height: 18px;
+	    }
+	   	.progress-icon {
+			position: absolute;
+			top:4px;
+			left:0;
+			display: block;
+			width:17px;
+			height:17px;
+			background: url(../images/progress_grey.png) no-repeat center center;
+			background-size:cover;
+		}
+	
+	}
+} 
+
+.grey-tip{
+	line-height: 1rem;
+	color:#999;
+	font-size: 0.7rem;
+	padding:18/@baseRem 26/@baseRem 8/@baseRem;
+}
+.from-wrapper{
+	background: #fff;
+}
+.input-line{
+	height:50px;
+	line-height: 50px;
+	padding:0 14px;
+	overflow: hidden;
+	border-bottom: 1px solid #d8d8d8;
+	position: relative;
+	span.l{
+		font-size:14px;
+		color:#333;
+		float: left;
+		width: 20%;
+		overflow: hidden;
+	}
+	input{
+		float: left;
+		height:50px;
+		// width: 80%;
+		border:0;
+		font-size:14px;
+		overflow: hidden;
+		color:#333;
+		text-align: right;
+
+		&.full-input{
+			width: 80%;
+			line-height: 50px;
+		}
+	}
+	.card-type{
+		float: left;
+		width: 80%;
+		color:#666;
+		// padding-left:24px;
+		position:relative;
+		font-size:14px;
+		line-height: 50px;
+		height:50px;
+		vertical-align: top;
+		text-align: right;
+	}
+	.bank-logo{
+	    width: 20px;
+	    height: 20px;
+	    margin-top: -4px;
+	}
+	.security-input-w{
+		float: left;
+		width: 80%;
+		position: relative;
+
+		input{
+			line-height: 50px;
+			width: 60%;
+		}
+
+		.sec-time{
+			width: 40%;
+			float: left;
+			position: relative;
+			font-size:16px;
+			color:#50abff;
+			text-align: center;
+			line-height: 50px;
+			font-style: normal;
+
+			i{
+			    border-left: 1px solid #d8d8d8;
+    			padding-left: 10px;
+			}
+		}
+	}
+}
+.a-btn{
+	margin-top:10rem;
+	a{
+		display:block;
+		width:94%;
+		margin:0 auto;
+		font-size:0.9rem;
+		background: @mainBlue;
+		color:#fff;
+		text-align: center;
+		height:44px;
+		line-height: 44px;
+		overflow: hidden;
+		border-radius:50px;
+		&.grey-bg{
+			background: #ccc;
+		}
+	}
+	
+}
+.head-right{
+	position: absolute;
+	font-size:12px;
+	color:#fff;
+	top:0;
+	right:14px;
+	height:42px;
+	line-height: 42px;
+	overflow: hidden;
+}
+.white-block{
+	background: #fff;
+	padding:0 32/@baseRem;
+	border-bottom:1px solid #d8d8d8;
+	.size14{
+		display: block;
+		font-size:14px;
+		color:#333;
+		padding:34/@baseRem 0;
+		.grey{
+			color:#999;
+		}
+	}
+	&.mgt10{
+		margin-top:0.5rem;
+	}
+	.overdue-help{
+		display: inline-block;
+	}
+	.help-icon{
+		display: inline-block;
+		width:16px;
+		height:16px;
+	}
+	.pay-input{
+		display: block;
+		float:right;
+		font-size:14px;
+		padding:0.55rem 0;
+		input{
+		    border: 0;
+		    width: 70px;
+		    color: #333;
+		    text-align: right;
+		    height: 26px;
+		    line-height: 26px;
+		    overflow: hidden;
+		    padding-right:4px;
+		}
+		.edit-money{
+			display: inline-block;
+			width:14px;
+			height:14px;
+		}
+	}
+}
+.coupon {
+	display: block;
+	font-size:14px;
+	color:#999;
+	position: relative;
+	padding:34/@baseRem 12px 34/@baseRem 8px;
+	&:after{
+		display: block;
+		position: absolute;
+		content: '';
+		width:14px;
+		height:14px;
+		background: url(../images/more_arrow.png) no-repeat center center;
+		background-size:cover;
+		top:34/@baseRem;
+		right:0;
+	}
+}
+.actual-pay{
+	font-size:14px;
+	color:#999;
+	padding:0.5rem 0.8rem;
+	.orange{
+		color:#fd9833;
+	}
+}
+.apply-renewal{
+	display: block;
+	text-align:center;
+	font-size:14px;
+	color:#50abff;
+	margin:40/@baseRem 0 0;
+	padding:0.5rem 0;
+}
+.overdue-tips{
+	color:#999;
+	font-size:14px;
+	text-align: center;
+}
+// .repayment{
+// 	position: relative;
+// 	/* height:100%; */
+// }
+.coupon-modal {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+    .coupon-con{
+    	position: absolute;
+    	width:100%;
+    	left:0;
+    	bottom:0;
+    	background: #fff;
+    }
+    .coupon-close{
+    	height:32px;
+    	line-height: 32px;
+    	text-align: right;
+    	font-size:16px;
+    	color:#4a9bee;
+    	overflow: hidden;
+    	border-bottom:1px solid #e7e7e7;
+    	padding:0 4%;
+    }
+    dl{
+		padding:0.5rem 0;
+		color:#333;
+		dt{
+			font-size:14px;
+			color:#717171;
+			height: 30px;
+			line-height: 30px;
+			overflow: hidden;
+			border-bottom:1px dashed #d2d2d2;
+			margin-bottom: 0.5rem;
+			padding:0 4%;
+		}
+		dd{
+			font-size:16px;
+			overflow: hidden;
+			padding:0.4rem 4%;
+			&.active{
+				background: #e5e5e5;
+			}
+			em{
+				display: block;
+				float: left;
+			}
+			p{
+				display: block;
+				float: right;
+			}
+		}
+		&.unusable{
+			color:#a8a8a8;
+			dt{
+				color: #a8a8a8;
+			}
+		}
+	}
+}
+.overdue-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    // padding-top:180px;
+    .overdue-con{
+    	background: #fff;
+    	border-radius: 6px;
+    	margin:120px 8% 0;
+    	padding:1.5rem 0.8rem;
+    	.overdue-line{
+    		margin-bottom: 0.75rem;
+    	}
+    	span{
+    		font-size:16px;
+    		display: inline-block;
+    		color:#333;
+    		&.fl{
+    			color:#999;
+    		}
+    	}
+    	.overdue-close{
+    		display: block;
+    		height:44px;
+    		line-height: 44px;
+    		margin:1.25rem 0.7rem 0;
+    		font-size: 18px;
+    		text-align: center;
+    		border-radius: 50px;
+    		background: @mainBlue;
+    		color:#fff;
+    	}
+
+    }
+}
+.text-6{
+	font-size:14px;
+	color:#666;
+	text-align: center;
+	padding:0.75rem 0;
+	background-color: #fff;
+}
+.money-num{
+	color:#666;
+	font-size:14px;
+	text-align: center;
+	background-color: #fff;
+	padding-bottom: 0.5rem;
+	em{
+		display: inline-block;
+	}
+	span{
+		display: inline-block;
+		color:#333;
+		font-size: 30px;
+	}
+}
+.bank-pay{
+	padding:1.1rem 0.8rem;
+	border-top:1px solid #d8d8d8;
+	background-color: #fff;
+	.bank-logo{
+		display: inline-block;
+		vertical-align: middle;
+		width:20px;
+		height: 20px;
+	}
+	span{
+		display:inline-block;
+		font-size: 14px;
+		color:#666;
+	}
+	.new-bank{
+		display: block;
+		float: right;
+		font-size:12px;
+		height:24px;
+		line-height: 24px;
+		border:1px solid #fd9833;
+		border-radius:4px;
+		color: #fd9833;
+		padding:0 8px;
+	}
+}
+.password-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.50);
+}
+.password-con {
+	width: 100%;
+}
+.password-body{
+	background: #f5f5f5;
+	margin:80px 8% 0;
+	border-radius: 6px;
+	padding-bottom: 30px;
+	position:relative;
+	z-index:2;
+	.password-title{
+		height:50px;
+		line-height: 50px;
+		position: relative;
+		border-top-right-radius: 6px;
+		border-top-left-radius: 6px;
+		background: @mainBlue;
+		font-size:18px;
+		text-align: center;
+		overflow: hidden;
+		color:#fff;
+		em{
+			display: block;
+			position: absolute;
+			font-size: 14px;
+			right:20px;
+			top:0;
+		}
+	}
+	.password-dot{
+		display: block;
+		margin:30px 6% 0;
+		width: 88%;
+	    overflow: hidden;
+		li{
+			display: block;
+			float: left;
+			background-color: #fff;
+			border:1px solid #cbcbcb;
+			width:16.66%;
+			height:44px;
+			border-right:0;
+			text-align: center;
+			&:last-child{
+				border-right: 1px solid #cbcbcb;
+			}
+			i{
+				display: inline-block;
+				font-size: 1px;
+			    line-height: 10px;
+				color: #ffffff;
+				margin: 16px auto;
+			    width: 10px;
+			    height: 10px;
+			    border-radius: 100px;
+			    -webkit-border-radius: 100px;
+			}
+			&.active{
+				i{
+			    	background: #333;
+			    	color: #333;
+				}
+			}
+		}
+	}
+	.forget-password{
+		display: block;
+		float: right;
+		font-size:14px;
+		color:#50abff;
+		padding:12px 12px 6px 0;
+	}
+}
+.keyboard{
+	background: #f5f5f5;
+	position: absolute;
+	bottom:0;
+	width:100%;
+	z-index: 1;
+	.board-num{
+		display: block;
+		width:100%;
+		li{
+			display: block;
+			text-align: center;
+			width:33.3333%;
+			float: left;
+			box-sizing: border-box;
+			height:44px;
+			line-height: 44px;
+			font-size: 14px;
+			color:#333;
+			border-top:1px solid #dadada;
+			border-right:1px solid #dadada;
+			&:nth-of-type(3n){
+				border-right:0;
+			}
+			&:nth-of-type(10),&:nth-of-type(12){
+				background: #e0e0e0;
+			}
+		}
+		img.keyboard-delete {
+		    display: block;
+		    width: 50px;
+		    height: 30px;
+		    margin: 6px auto;
+		}
+	}
+}
+.pay-success{
+	.success-img{
+		display: block;
+		width:180/@baseRem;
+		height:180/@baseRem;
+		margin:5rem auto 55/@baseRem;
+	}
+	p{
+		text-align: center;
+		color:#999;
+	}
+	.success-text{
+		font-size:0.8rem;
+		padding:0 2.5rem 2rem;
+		line-height: 1.2rem;
+	}
+	.success-tips{
+		font-size: 0.7rem;
+	}
+}
+
+*[v-cloak]{
+	display: none;
+}
+
+.a-btn{
+	a.redColor{
+		background:#FF4542;
+	}
+}
+.password-body{
+	.password-title.redColor{
+		background:#FF4542;
+	}
+}
+.a-btn.redColor a{
+	background:#FF4542;
+}
+.a-btn.redColor a.grey-bg{
+	background:#ccc;
+} 
